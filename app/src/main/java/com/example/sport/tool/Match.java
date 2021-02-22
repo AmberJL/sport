@@ -1,4 +1,4 @@
-package com.example.mi_class.tool;
+package com.example.sport.tool;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

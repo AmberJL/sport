@@ -1,22 +1,18 @@
-package com.example.mi_class.tool;
+package com.example.sport.tool;
 
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
 import java.security.Key;
-import java.security.NoSuchAlgorithmException;
-//import java.util.Base64;
 import java.util.HashMap;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
-import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-
-
+//import java.util.Base64;
 
 
 public class AES {

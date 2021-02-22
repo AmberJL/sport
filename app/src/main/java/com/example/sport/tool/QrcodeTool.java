@@ -1,7 +1,4 @@
-package com.example.mi_class.tool;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+package com.example.sport.tool;
 
 import android.Manifest;
 import android.app.Activity;
@@ -13,6 +10,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.example.mi_class.R;
 import com.google.zxing.BarcodeFormat;
@@ -39,7 +39,7 @@ public class QrcodeTool extends AppCompatActivity implements SurfaceHolder.Callb
 
     public  void checkCamera(Activity activity) {
         String[] PERMISSIONS_STORAGE={Manifest.permission.CAMERA};
-        int permission = ActivityCompat.checkSelfPermission(activity,Manifest.permission.CAMERA);
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA);
         if (permission != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity,PERMISSIONS_STORAGE,1);
 
@@ -50,7 +50,7 @@ public class QrcodeTool extends AppCompatActivity implements SurfaceHolder.Callb
 
         }
     }
-    public static Bitmap getQRCode(String value,int width,int height){
+    public static Bitmap getQRCode(String value, int width, int height){
         Map<EncodeHintType, Object> map=new HashMap<EncodeHintType, Object>();
         map.put(EncodeHintType.CHARACTER_SET, "UTF-8");
         map.put(EncodeHintType.MARGIN, 1);
@@ -68,7 +68,7 @@ public class QrcodeTool extends AppCompatActivity implements SurfaceHolder.Callb
                 else temp[i*width+j]=0xffffffff;
             }
         }
-        Bitmap bitmp=Bitmap.createBitmap(width,height,Bitmap.Config.ARGB_8888);
+        Bitmap bitmp= Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
         bitmp.setPixels(temp,0,width,0,0,width,height);
         return bitmp;
     }
@@ -138,7 +138,7 @@ public class QrcodeTool extends AppCompatActivity implements SurfaceHolder.Callb
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
         sh=surfaceHolder;
-        camera=Camera.open(Camera.CameraInfo.CAMERA_FACING_BACK);
+        camera= Camera.open(Camera.CameraInfo.CAMERA_FACING_BACK);
         camera.setDisplayOrientation(90);
         Camera.Parameters p=camera.getParameters();
         p.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);

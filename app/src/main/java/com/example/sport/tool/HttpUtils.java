@@ -1,4 +1,4 @@
-package com.example.mi_class.tool;
+package com.example.sport.tool;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -6,10 +6,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
-import java.util.HashMap;
 import java.util.Map;
 
 public class HttpUtils {
@@ -32,7 +29,7 @@ public class HttpUtils {
      * @param encode 字节编码
      * @return
      */
-    public static String sendPostMessage(Map<String, String> params,String encode,String TAG){
+    public static String sendPostMessage(Map<String, String> params, String encode, String TAG){
         StringBuffer buffer = new StringBuffer();
         buffer.append("{");
         try {//把请求的主体写入正文！！
@@ -93,7 +90,7 @@ public class HttpUtils {
      * @param encode
      * @return
      */
-    private static String changeInputeStream(InputStream inputStream,String encode) {
+    private static String changeInputeStream(InputStream inputStream, String encode) {
         //通常叫做内存流，写在内存中的
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         byte[] data = new byte[1024];

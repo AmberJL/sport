@@ -1,14 +1,12 @@
-package com.example.mi_class.tool;
+package com.example.sport.tool;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
-
-import com.example.mi_class.activity.FileActivity;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,12 +17,12 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Map;
 
-public class HttpFile implements Runnable{
+public class HttpFile implements Runnable {
     private String urlStr;
     private Map<String, String> params;
-    private Map<String, java.io.File> files;
+    private Map<String, File> files;
     private Handler hd;
-    public HttpFile(String urlStr, Map<String, String> params, Map<String, java.io.File> files,Handler handler){
+    public HttpFile(String urlStr, Map<String, String> params, Map<String, File> files, Handler handler){
         this.files=files;
         this.params=params;
         this.urlStr=urlStr;
@@ -50,7 +48,7 @@ public class HttpFile implements Runnable{
         }
     }
     //这个方法不要动，可以直接用
-    public static InputStream post(String urlStr, Map<String, String> params, Map<String, java.io.File> files) {
+    public static InputStream post(String urlStr, Map<String, String> params, Map<String, File> files) {
         final String BOUNDARY = "-------45962402127348";
         final String FILE_ENCTYPE = "multipart/form-data";
         InputStream is = null;
@@ -88,7 +86,7 @@ public class HttpFile implements Runnable{
 
             if (files != null) {
                 for (String s : files.keySet()) {
-                    java.io.File f = files.get(s);
+                    File f = files.get(s);
                     sb = new StringBuilder();
                     sb.append("--");
                     sb.append(BOUNDARY);

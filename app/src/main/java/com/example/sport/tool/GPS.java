@@ -1,4 +1,4 @@
-package com.example.mi_class.tool;
+package com.example.sport.tool;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -9,8 +9,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
-
-
 
 
 public class GPS {
